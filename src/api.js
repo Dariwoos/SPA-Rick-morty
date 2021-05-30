@@ -8,7 +8,7 @@
    }
    async getDataBank(id) {
      const response = await fetch(
-       "https://3000-green-damselfly-o61c1gdn.ws-eu08.gitpod.io/pro" + id
+       "https://3000-green-damselfly-o61c1gdn.ws-eu08.gitpod.io/json/"+id  
      );
      const data = await response.json();
      return data;
