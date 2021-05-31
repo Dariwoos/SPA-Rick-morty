@@ -1,7 +1,10 @@
 import React,{useContext} from 'react'
-import CharacterContext from "./CharacterContext.js";
-import DataContext from "./DataContext.js";
-import api from "./api"
+import CharacterContext from "../context+api/CharacterContext.js";
+import DataContext from "../context+api/DataContext.js";
+import api from "../context+api/api"
+import "../css/Next.css";
+
+
 export default function Next({next,back}) {
 
     const context =useContext(CharacterContext);
@@ -24,9 +27,17 @@ export default function Next({next,back}) {
 
 
     return (
-        <div>
-           <button onClick={handleClick}>{next}Next</button> 
-           {context.character.id > 1 ? <button onClick={handleBack}>{back} Back</button>: null}
+      <div className="container">
+        <div className="row">
+          <button className="btn btn-success in-mid" onClick={handleClick}>
+            {next}Next
+          </button>
+          {context.character.id > 1 ? (
+            <button className="btn btn-warning in-mid" onClick={handleBack}>
+              {back} Back
+            </button>
+          ) : null}
         </div>
-    )
+      </div>
+    );
 }
