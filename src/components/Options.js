@@ -1,6 +1,6 @@
 import React ,{useEffect, useState} from 'react'
 import api from "../context+api/api.js"
-
+import "../css/Options.css"
 
 export default function Options(name) {
 
@@ -29,7 +29,7 @@ export default function Options(name) {
           }
 
     return (
-      <form onSubmit={handleClick}>
+      <form onSubmit={handleClick} className="form">
         <select>
           {" "}
           {personalities.map((index, key) => {
